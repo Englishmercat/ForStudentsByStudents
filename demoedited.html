@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Float Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="float-panel.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="demo2.css" rel="stylesheet" />
+    <style>
+        body {margin:0;padding:0;font-family:Arial, sans-serif;font-size:14px;background:#f6f6f6;}
+        li {padding:10px 0;}
+        code {color:green;}
+        .img-responsive {
+            display: block;
+            width:100%;
+            height: auto;
+            max-width:500px;
+        }
+        .main-content {
+            padding:70px;
+            margin-right:300px;
+        }
+         
+        #vertical-nav a {
+            text-transform:uppercase;
+            display:block;
+            text-align:center;
+            font:bold 20px/50px Arial;
+            text-decoration:none;
+            color:#666;
+            transition:color 0.25s;
+        }
+
+        #vertical-nav a.active,  #vertical-nav a:hover {
+            color:#b49901;
+        }
+
+        @media only screen and (max-width: 800px) {
+            .floatWrapper {float:none!important;}       
+            .float-panel {position:static!important;}
+            .main-content {padding:20px;margin-right:0px;}
+        }
+
+#backtop {
+	        position: fixed;
+            left:auto;right: 20px;top:auto;bottom: 20px;
+	        outline: none;
+            overflow:hidden;
+            color:#fff;
+            text-align:center;
+            background-color:rgba(49,79,96,0.84);
+            height:40px;
+            width:40px;
+            line-height:40px;
+            font-size:14px;
+            border-radius:2px;
+            cursor:pointer;
+            transition:all 0.3s linear;
+            z-index:999999;
+
+            opacity:1;
+            display:none;
+        }
+        #backtop:hover {
+            background-color:#27CFC3;
+        }
+        #backtop.mcOut {
+            opacity:0;
+        }
+    </style>
+</head>
+<body>
+<center><nav>
+        <div class="float-panel" data-top="0" data-scroll="200">
+            <div style="text-align:center;max-width:1360px;margin:0 auto;">
+                <a href="#" style="float:center;">
+                <i class="fa fa-gg"></i>
+                    <em style="font:bold 20px Verdana, Arial;letter-spacing:1px;">For Students By Students</em>
+                </a>
+
+                
+
+            </div>
+        </div>
+    </nav></center>
+<div id="backtop">&#9650;</div>
+    <center><img src="data:image/jpeg;base64,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"></center>
+    <div style="margin:0 auto;background-color:white;">
+        <div class="floatWrapper" style="float:right;">
+            <div class="float-panel" data-top="0" style="width:300px;">
+                <div style="text-align:center;padding-top:30px;">
+                    <img src="C:\Users\Tom Frances\Downloads\float-panel\Edited for webpage\socials.png" style="width:70%;" />
+                </div>
+                <div id="vertical-nav">
+                    <a href="#">Home</a>
+                    <a href="#">Videos</a>
+                    <a href="#">About us</a>
+                    <a href="#">Active help</a>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <h1>For Students By Students Start Page!</h1>
+            <p>This will be where several things are:</p>
+            <ul>
+                <li>A introducton of the webpage</li>
+                <li>Why it was done</li>
+                <li>How to use it</li>
+                <li>Maybe the <strong>TEAM</strong> behind it</li>
+            </ul>
+            <p>&nbsp;</p>
+            <h1>An inspreational paragraph</h1>
+            <p>Insert Insperational pragraph and image hear...</p>
+            <p>&nbsp;</p>
+            <h1>This is were we could start to have the videos in the style that I will introduce later</h1>
+            <p>&nbsp;</p>
+            <h1>Important code for later</h1>
+            <p>Resize the window size to smaller than 800px in width, and you will see both the <strong>sticky</strong> feature and the <code>float:right</code> style are gone. 
+            It is the responsive layout we want for mobile screens. This can be easily configured with the CSS @media queries:</p>
+            <code><pre>@media only screen and (max-width: 800px) {
+    .floatWrapper {float:none!important;}       
+    .float-panel {position:static!important;}
+    .main-content {padding:20px;margin-right:0px;}
+}</pre></code>
+            
+            <p>&nbsp;</p>
+            
+             
+            <div style="height:300px"></div>
+<div class="awards">
+                    <img class="award" src="http://www.uplandscc.com/img/bespoke/uplands/awards/award1.jpg"> <img class="award" src="http://www.uplandscc.com/img/bespoke/uplands/awards/award2.jpg"> <img class="award" src="http://www.uplandscc.com/img/bespoke/uplands/awards/award3.jpg"> <img class="award" src="http://www.uplandscc.com/img/bespoke/uplands/awards/award4.jpg"> <img class="award" src="http://www.uplandscc.com/img/bespoke/uplands/awards/award5.jpg"> <img class="award" src="http://www.uplandscc.com/img/bespoke/uplands/awards/award6.jpg">
+                <p>With help with <a href src="http://www.menucool.com/" title="Web UI components"><code>www.MENUCOOL.co.uk</code></a></p> 
+                </div>
+        </div>
+    </div>
+</body>
+</html>
