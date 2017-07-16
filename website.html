@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Float Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="float-panel.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="demo2.css" rel="stylesheet" />
+    <style>
+        body {margin:0;padding:0;font-family:Arial, sans-serif;font-size:14px;background:#f6f6f6;}
+        li {padding:10px 0;}
+        code {color:green;}
+        .img-responsive {
+            display: block;
+            width:100%;
+            height: auto;
+            max-width:500px;
+        }
+        .main-content {
+            padding:20px;
+            margin-right:200px;
+            margin-left: 0px;
+            width:2000px;
+        }
+        #vertical-nav a {
+            text-transform:uppercase;
+            display:block;
+            text-align:center;
+            font:bold 20px/50px Arial;
+            text-decoration:none;
+            color:#666;
+            transition:color 0.25s;
+        }
+        #vertical-nav a.active,  #vertical-nav a:hover {
+            color:#b49901;
+        }
+        @media only screen and (max-width: 800px) {
+            .floatWrapper {float:none!important;}       
+            .float-panel {position:static!important;}
+            .main-content {padding:20px;margin-right:0px;}
+        }
+#backtop {
+	        position: fixed;
+            left:auto;right: 20px;top:auto;bottom: 20px;
+	        outline: none;
+            overflow:hidden;
+            color:#fff;
+            text-align:center;
+            background-color:rgba(49,79,96,0.84);
+            height:40px;
+            width:40px;
+            line-height:40px;
+            font-size:14px;
+            border-radius:2px;
+            cursor:pointer;
+            transition:all 0.3s linear;
+            z-index:999999;
+
+            opacity:1;
+            display:none;
+        }
+        #backtop:hover {
+            background-color:#27CFC3;
+        }
+        #backtop.mcOut {
+            opacity:0;
+        }
+    </style>
+</head>
+<body>
+<center><nav>
+        <div class="float-panel" data-top="0" data-scroll="200">
+            <div style="text-align:center;max-width:1360px;margin:0 auto;">
+                <a href="#" style="float:center;">
+                <i class="fa fa-gg"></i>
+                    <em style="font:bold 20px Verdana, Arial;letter-spacing:1px;">I am... I will...</em>
+                </a>
+
+                
+
+            </div>
+        </div>
+    </nav></center>
+<div id="backtop">&#9650;</div>
+    <div style="max-width:1000px;margin:0 auto;background-color:white;">
+        <div class="floatWrapper" style="float:left;">
+            <div class="float-panel" data-top="0" style="width:250px;">
+                <div style="text-align:center;padding-top:30px;">
+                    <img src="imgs/socials.png" style="width:70%;" />
+                </div>
+                <div id="vertical-nav">
+                    <a href="#">Home</a>
+                    <a href="#">Videos</a>
+                    <a href="#">About us</a>
+                    <a href="#">Active help</a>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <h1>For Students By Students Start Page!</h1>
+            <p>This will be where several things are:</p>
+            <ul>
+                <li>A introducton of the webpage</li>
+                <li>Why it was done</li>
+                <li>How to use it</li>
+                <li>Maybe the <strong>TEAM</strong> behind it</li>
+            </ul>
+            <p>&nbsp;</p>
+            <h1>An inspreational paragraph</h1>
+            <p>Insert Insperational pragraph and image hear...</p>
+            <p>&nbsp;</p>
+            <h1>This is were we could start to have the videos in the style that I will introduce later</h1>
+            <p>&nbsp;</p>
+            <h1>Important code for later</h1>
+            <p>Resize the window size to smaller than 800px in width, and you will see both the <strong>sticky</strong> feature and the <code>float:right</code> style are gone. 
+            It is the responsive layout we want for mobile screens. This can be easily configured with the CSS @media queries:</p>
+            <code><pre>@media only screen and (max-width: 800px) {
+    .floatWrapper {float:none!important;}       
+    .float-panel {position:static!important;}
+    .main-content {padding:20px;margin-right:0px;}
+}</pre></code>
+            
+            <p>&nbsp;</p>
+
+	    <h1>Notes From Alex:</h1>
+<ul>	    
+	<il>1. The code in the source needs to be neatened, so it can be read properly, i had to search through this crap</il>
+<p>&nbsp;</p>
+	<il>2. The backround needs to be changed to a darker colour im thinking maybe #696969 (HAHAHA No...) had to chose that number, looks best...</il>
+<p>&nbsp;</p>
+	<il>3. Sliding dropdown should be on left not right, looks weird otherwise </il>
+<p>&nbsp;</p>
+	<il>4. We should make the top have a bar (like the website we were shown) which fades away then the side bar comes up </il>
+<p>&nbsp;</p>
+	<il>5. Maybe make a mockup gif logo to go in top left and folow the side bar down sticking above it, replacing the current social media images </il>
+<p>&nbsp;</p>
+	<il>6. Make the social media photos indiviual instead of one together, so we can add individual hyperlinks </il>
+<p>&nbsp;</p>
+	<il>7. Ill Probably think of more, this should be the starters tho </il>
+</ul>
+            
+             
+            <div style="height:300px"></div>
+<div class="awards">
+                    <img class="award" src="http://www.uplandscc.com/img/bespoke/uplands/awards/award1.jpg"> <img class="award" src="http://www.uplandscc.com/img/bespoke/uplands/awards/award2.jpg"> <img class="award" src="http://www.uplandscc.com/img/bespoke/uplands/awards/award3.jpg"> <img class="award" src="http://www.uplandscc.com/img/bespoke/uplands/awards/award4.jpg"> <img class="award" src="http://www.uplandscc.com/img/bespoke/uplands/awards/award5.jpg"> <img class="award" src="http://www.uplandscc.com/img/bespoke/uplands/awards/award6.jpg">
+                <p>With help with <a href src="http://www.menucool.com/" title="Web UI components"><code>www.MENUCOOL.co.uk</code></a></p> 
+                </div>
+        </div>
+    </div>
+</body>
+</html>
